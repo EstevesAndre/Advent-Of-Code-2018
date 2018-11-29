@@ -8,7 +8,7 @@ Advent of Code is a series of small programming puzzles for a variety of skill l
 
 ## Current Challenge 
 
-Check their page [here](https://adventofcode.com/2018).
+Check their page [here](https://adventofcode.com/2018)
 
 ## Previous Challenges
 
