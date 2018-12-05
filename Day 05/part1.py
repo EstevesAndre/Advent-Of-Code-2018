@@ -3,25 +3,17 @@ file=open("input.in","r")
 line = file.readline()
 
 def react(char1,char2):
-    if char1.isupper() and char2.islower() or char2.isupper() and char1.islower():
-        if char1.upper() == char2.upper():
-            return True
-    return False
+    return (
+            char1.lower() == char2.lower() and
+            (char1.isupper() and char2.islower() or char1.islower() and char2.isupper())
+           )
 
-findsReact = True
+reactedString = []
 
-while findsReact == True:
-    findsReact = False
-    index = 0
-    reactedLine = ""
-    while index < len(line) - 1:
-        if react(line[index], line[index+1]):
-            index += 2
-            findsReact = True
-        else:
-            reactedLine += line[index:index+1]
-            index += 1
-    reactedLine += line[index:]
-    line = reactedLine
-
-print(len(line))
+for char in line:
+    if reactedString and react(char, reactedString[-1]):
+        reactedString.pop()
+    else:
+        reactedString.append(char)
+    
+print(len(reactedString))
